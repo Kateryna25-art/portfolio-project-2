@@ -1,0 +1,114 @@
+@use 'reset';
+@use 'vars';
+@use 'fonts';
+
+html,
+body {
+  height: 100%;
+  overflow-x: clip;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @extend %inter-400;
+  font-size: 16px;
+
+  &.is-menu-open {
+    overflow: hidden;
+  }
+}
+
+a,
+button {
+  &:focus-visible {
+    outline: 2px solid vars.$color-btn;
+    outline-offset: 3px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  width: 100%;
+  overflow: clip;
+}
+
+.main {
+  flex: 1;
+}
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container-small {
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.j-between {
+  justify-content: space-between;
+}
+
+.font-600 {
+  @extend%montserrat-600;
+}
+
+.j-center {
+  justify-content: center;
+}
+
+.a-center {
+  align-items: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
